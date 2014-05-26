@@ -1,6 +1,2 @@
-(ns test-api-first.core)
-
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(ns test-api-first.core
+  (:use [test-api-first.config]))
