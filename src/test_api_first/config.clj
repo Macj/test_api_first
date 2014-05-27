@@ -7,7 +7,4 @@
     google (str base "google.com")
     wiki (str base "wikipedia.org")
     nat-geo (str base "nationalgeographic.org")]
-  [clojure apple google wiki nat-geo]))
-
-(def number-of-threads
-  5)
+  (vector clojure apple google wiki nat-geo)))
