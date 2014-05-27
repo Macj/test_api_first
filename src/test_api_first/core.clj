@@ -3,10 +3,11 @@
         [ring.util.response]
         [compojure.core])
   (:require [org.httpkit.client :as http]
-            [test_api_first.query-generator :as gen]))
+            [test_api_first.query-generator :as gen]
+            [test_api_first.config :as conf]))
 
 (defn send-it [url data]
-  (http/get url {:json data}))
+  (http/get (str url) {:json data}))
 
 (defn make-request []
   (let [data (gen/query-generator)
