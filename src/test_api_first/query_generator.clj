@@ -1,5 +1,5 @@
 (ns test_api_first.query-generator
-	:require [crypto.random :as cryran])
+	(:require [crypto.random :as cryran]))
 
 
 (defn cat [] (rand-nth ["IAB1" "IAB1-1" "IAB9" "IAB9-30" "books" "games"]))

@@ -1,2 +1,17 @@
 (ns test-api-first.core
-  (:use [test-api-first.config]))
+  (:use [ring.adapter.jetty]
+        [ring.util.response]
+        [compojure.core])
+  (:require [org.httpkit.client :as http]
+            [test_api_first.query-generator :as gen]
+            [test-api-first.config :as conf]))
+
+(defn send-it [url data]
+  (http/get url data)
+  )
+
+(defn make-request []
+  (let [data (gen/query-generator)
+        urls (conf/urls)
+    ]
+    (doseq [url urls] (send-it url data))))
