@@ -7,11 +7,9 @@
             [test-api-first.config :as conf]))
 
 (defn send-it [url data]
-  (http/get url data)
-  )
+  (http/get (str url) {:json data}))
 
 (defn make-request []
   (let [data (gen/query-generator)
-        urls (conf/urls)
-    ]
+        urls (conf/urls)]
     (doseq [url urls] (send-it url data))))
